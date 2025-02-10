@@ -1,0 +1,33 @@
+Data Structure performance analysis:
+
+Here is the time complexity of each data structure by operation
+
+1. insert
+
+Arrays: O(1) when inserting because we know the size of the array, so we only need to add to the last element.
+Queue: O(1) you just insert at the end of the queue, no need to traverse
+Stack: O(1) similar to queue, you just push to the top of the stack, no need to traverse
+Linked List: O(n) when inserting at the end of the list, which is the implementation I did here. The reason
+    is that you need to traverse to the end of the list to insert
+
+
+2. Delete
+
+Arrays: O(n) because we need to shift elements, so the size of the array will impact how many elements need
+    to be shifted linearly.
+Queue: O(1) remove the front element (no need to traverse or shift elements)
+Stack: O(1) remove from top of the stack (no need for traverse, similar to queue)
+Linked List: O(n) when deleting an element in the middle. The reason being that you need to traverse through the
+    list until you find the element.
+
+3. Search
+
+Arrays:
+- Here it depeneds on the search algorithm that is used, for linear search it can be O(n), but some other 
+    search algorithms can be O(log n), for this case is O(n)
+
+Queue: O(n) because its a linear search, you need to traverse thought the queue
+Stack: O(n) similarly to queues, you need to do a linear search
+Linked List: O(n) again, you can only do linear search so the size of the lists linearly impacts search performance.
+
+
