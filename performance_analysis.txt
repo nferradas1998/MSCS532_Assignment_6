@@ -1,0 +1,49 @@
+Time Complexity analysis:
+
+- Deterministic algorithm
+    For the deterministic version, all scenarios (average, best case, worse case) have the same time complexity of
+    O(n). This is due to the median of medians approach, as it ensures well balance partitions  which means that pivots are always decently selected.
+
+
+- Randomized algorithm
+    For the randomized version of the algorithm the time complexity breakdown is as follows:
+        1. Average Case scenario O(n):
+            This algorithm basically picks a random pivot and then searhes the array (after doing a quicksort) 
+            in the half where the value should be.
+        2. Best case scenario O(n):
+            Similar to Average Case, there is no significant improvement in the most ideal conditions
+        3. Worst case scenario O(n^2):
+            there is a worse case scenario for the randomized version of quickselect that impacts the performance
+            significantly. This happens very rarely but its possible when the pivot selection results in only one element
+            being shifted. Although rare, it is possible for it to happen.
+
+Space Complexity:
+
+Both these algorithms are in-place so they generally don't use additional space as they work in the same array to 
+find the element. However, when implemented in a recursive way the recursion can go deep (at least for
+randomized worse case) which has some memory overhead.
+
+
+Empirical Analysis:
+
+Generally, Randomized quickselect performed better. That is also why it is commonly chosed. It is very difficult
+to force a worse case scenario, since the pivot is chosen at random. So unless I forced the selection to the smallest or largest
+elements in a sorted or reverse-sorted array, its mostly luck.
+
+Here are some results for one run with arrays of size 10,000 and k=461:
+
+the  461 th smallest element is  561
+the  461 th smallest element is  561
+Randomize Array performance: 
+ Deterministic Quicksort:  0.006004810333251953 
+ Randomized Quicksort:  0.002185344696044922
+the  461 th smallest element is  461
+the  461 th smallest element is  461
+Sorterd Array performance: 
+ Deterministic Quicksort:  0.006005525588989258 
+ Randomized Quicksort:  0.003153562545776367
+the  461 th smallest element is  462
+the  461 th smallest element is  462
+Reverse-sorted Array performance: 
+ Deterministic Quicksort:  0.006319761276245117 
+ Randomized Quicksort:  0.005006313323974609
